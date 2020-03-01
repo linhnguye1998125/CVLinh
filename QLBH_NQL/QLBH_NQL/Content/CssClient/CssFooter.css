@@ -1,0 +1,15 @@
+﻿.customDivfooter {
+    padding: 10px;
+    margin: 10px;
+    color: white;
+}
+
+    .customDivfooter p a {
+        color: white;
+    }
+
+.color {
+    background: #ef5777e0;
+    margin-top: 20px;
+    /*rgb(255, 128, 151)*/
+}

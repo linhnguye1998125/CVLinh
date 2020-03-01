@@ -1,0 +1,28 @@
+﻿@using QLBH_NQL.Models;
+@model List<GioHang>
+
+@{
+    string logo = Html.Action("LayLoGo", "Banner", new { thutu = 1, trangthai = true }).ToString();
+    string Banner = Html.Action("LayLoGo", "Banner", new { thutu = 2, trangthai = true }).ToString();
+}
+<img class="picture thumbnail" src="@Url.Content(Banner)" alt="Banner bán hoa" />
+
+<div class="logo">
+
+    <img class="kichthuoc" src="@Url.Content(logo)" alt="Logo bán hoa" />
+</div>
+<div class="logo-giohang">
+    <a href="~/Home/Giohang">
+        <img src="~/Image/cart.png" data-toggle="tooltip" class="img-giohang" title="Giỏ Hàng" alt="giỏ hàng">
+        @{
+            int so = 0;
+            foreach (var item in Model)
+            {
+                so += int.Parse(item.SoLuong.ToString());
+            }
+        }
+        @Html.ActionLink(so.ToString(), "GioHang", "Home")
+    </a>
+</div>
+
+

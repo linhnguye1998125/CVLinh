@@ -1,0 +1,57 @@
+﻿.color-submenu {
+    background-color: rgba(255,39,93,1) !important;
+}
+
+.color-menu {
+    background-color: rgba(255,39,93,1);
+    border: none;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: white !important;
+    font-family: 'Adobe Ming Std';
+}
+
+    .navbar-default .navbar-nav > li > a:hover {
+        color: #8f1196 !important;
+    }
+
+.dropdown-menu > li > a {
+    color: white !important;
+    font-family: 'Adobe Ming Std';
+}
+
+    .dropdown-menu > li > a:hover {
+        color: #8f1196 !important;
+        background-color: rgba(255,39,93,1);
+    }
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover {
+    color: #8f1196 !important;
+    background-color: rgba(255,39,93,1) !important;
+}
+
+.navbar {
+    z-index: 99;
+}
+
+.nho {
+    display: inline-block;
+    width: 80% !important;
+    margin-top: 8px;
+}
+
+.nav {
+    margin-right: 0px;
+}
+
+.btn-image {
+    background: url('../../Image/Search.png') no-repeat center;
+    background-color: white;
+}
+
+.btn-default {
+    margin-top: -3px;
+    margin-left: -3px;
+    border-radius: initial;
+}

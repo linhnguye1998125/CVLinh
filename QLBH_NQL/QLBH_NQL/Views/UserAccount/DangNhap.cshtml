@@ -1,0 +1,59 @@
+﻿@using QLBH_NQL.Models;
+@model KHACHHANG
+@{
+                /**/
+
+                ViewBag.Title = "Đăng nhập";
+                Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Đăng nhập</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <link rel="shortcut icon" href="~/Image/logo.png">
+    <link href="~/Content/CssClient/CssUserAccount.css" rel="stylesheet" />
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+
+        <div id="popup">
+            <div id="popupcontrol">
+                <hr class="gachchan" />
+                <div class="dangnhap">
+                    <div class="title-dn">ĐĂNG NHẬP</div>
+                    <div class="tendangnhap">
+                        @Html.TextBoxFor(n => n.TENDN, new { @class = "customdn", @Placeholder = "Tên tài khoản" })
+                        @Html.ValidationMessageFor(n => n.TENDN, null, new { @class = "text-danger" })
+                    </div>
+                    <div class="matkhau">
+                        @Html.PasswordFor(n => n.MATKHAU, new { @class = "customdn", @Placeholder = "Mật khẩu" })
+                        @Html.ValidationMessageFor(n => n.MATKHAU, null, new { @class = "text-danger" })
+                    </div>
+                    <div class="btndn">
+                        <input id="btndn" type="submit" value="Đăng nhập" class="btn btn-info btn-block" />
+                    </div>
+                    <div class="khac">
+                        <div class="doimatkhau">
+                            <a class="color" href="~/UserAccount/DoiMatKhau">Đổi mật khẩu</a>
+                        </div>
+                        <span>|</span>
+                        <div class="trangchu">
+                            <a class="color" href="~/Home/TrangChu">Trang chủ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</body>
+</html>

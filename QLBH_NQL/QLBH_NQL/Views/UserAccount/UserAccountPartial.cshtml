@@ -1,0 +1,49 @@
+﻿
+
+<link href="~/Content/CssClient/CssUserAccount.css" rel="stylesheet" />
+<div class="container-fluid remove-padding">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="login">
+                @using (Html.BeginForm())
+                {
+                    if (Session["TENDN"] == null)
+                    {
+                        <ul>
+                            <li style="color: white; margin-left: 40px"><span class="glyphicon glyphicon-earphone">0372325249</span></li>
+                            <li class="right">
+                                <span class="glyphicon glyphicon-user space"></span>
+                                @Html.ActionLink("Đăng ký", "DangKy", "UserAccount")
+                            </li>
+                            <span class="vertical-bar right">| </span>
+                            <li class="right">
+                                <span class="glyphicon glyphicon-log-in space"></span>
+                                @Html.ActionLink("Đăng nhập", "DangNhap", "UserAccount")
+                            </li>
+                        </ul>
+                    }
+                    else
+                    {
+                        <ul>
+                            <li style="color: white; margin-left: 40px"><span class="glyphicon glyphicon-earphone">0372325249</span></li>
+                            <li class="right">
+                                <span class="glyphicon glyphicon-user space"></span>
+                                @Html.ActionLink("Đăng xuất", "DangXuat", "UserAccount")
+                            </li>
+                            <span class="vertical-bar right">| </span>
+                            <li class="right">
+                                <span class="caret" data-toggle="dropdown"></span>
+                                <ul class="dropdown-menu thaxuong">
+                                    <li>
+                                        @Html.ActionLink("Thông tin cá nhân", "ThongTinKhachHang", "UserAccount")
+                                    @*<a href="~/Shared/_LayoutClient">Thông tin cá nhân</a></li>*@
+                            </ul>
+                            <span style="color:white;">Xin chào: @Session["TENDN"].ToString()</span>
+                        </li>
+                    </ul>
+                }
+            }
+            </div>
+        </div>
+    </div>
+</div>
