@@ -286,14 +286,15 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_LayoutClient.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\TrangChu.cshtml" />
     <Content Include="Views\Banner\BannerPartial.cshtml" />
     <Content Include="Views\NavBar\NavBarPartial.cshtml" />
     <Content Include="Views\UserAccount\DangNhap.cshtml" />
     <Content Include="Views\UserAccount\UserAccountPartial.cshtml" />
+    <Content Include="Views\UserAccount\DangKy.cshtml" />
+    <Content Include="Views\UserAccount\DoiMatKhau.cshtml" />
+    <Content Include="Views\UserAccount\ThongTinKhachHang.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
