@@ -1,0 +1,80 @@
+﻿@using QLBH_NQL.Models;
+@model KHACHHANG
+@{
+                /**/
+
+                ViewBag.Title = "Đăng ký";
+                Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Đăng ký</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <link rel="shortcut icon" href="~/Image/logo.png">
+    <link href="~/Content/CssClient/CssDangKy.css" rel="stylesheet" />
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken();
+        @Html.ValidationSummary(false);
+        <div id="popup">
+            <div id="popupcontrol">
+                <hr class="gachchan" />
+                <div class="dangnhap">
+                    <div class="title-dn">ĐĂNG KÝ</div>
+                    <div class="layout">
+                        @Html.TextBoxFor(n => n.TENKH, new { @class = "customdn", @Placeholder = "Họ tên đầy đủ" })
+                        @Html.ValidationMessageFor(n => n.TENKH, null, new { @class = "text-danger" })
+                    </div>
+                    <div class="layout">
+                        @Html.TextBoxFor(n => n.TENDN, new { @class = "customdn", @Placeholder = "Tên đăng nhập" })
+                        @Html.ValidationMessageFor(n => n.TENDN, null, new { @class = "text-danger" })
+
+                    </div>
+                    <div class="layout">
+                        @Html.PasswordFor(n => n.MATKHAU, new { @class = "customdn", @Placeholder = "Mật khẩu" })
+                        @Html.ValidationMessageFor(n => n.MATKHAU, null, new { @class = "text-danger" })
+                    </div>
+                    <div class="layout">
+                        @Html.PasswordFor(n => n.MATKHAU, new { @class = "customdn", @Placeholder = "Xác nhận mật khẩu" })
+                        @*@Html.ValidationMessageFor(n => n.MATKHAU, "Bạn vui lòng nhập xác nhận lại mật khẩu!", new { @class = "text-danger" })*@
+
+                    </div>
+                    <div class="layout">
+                        @Html.TextBoxFor(n => n.NGAYSINH, new { @class = "customdn", @Placeholder = "Nhập ngày sinh" })
+                        @Html.ValidationMessageFor(n => n.NGAYSINH, null, new { @class = "text-danger" })
+                    </div>
+                    <div class="layout">
+                        Giới tính:
+                        Nam @Html.RadioButtonFor(n => n.GIOITINH, "0")
+                        &nbsp;&nbsp;Nữ @Html.RadioButtonFor(n => n.GIOITINH, "1")
+                    </div>
+                    <div class="layout">
+                        <input ID="btndk" type="submit" value="ĐĂNG KÝ" class="btn btn-info btn-block" />
+                    </div>
+                    <div class="khac">
+                        <div class="doimatkhau">
+                            <a class="color" href="~/UserAccount/DoiMatKhau">Đổi mật khẩu</a>
+                        </div>
+                        <span>|</span>
+                        <div class="trangchu">
+                            <a class="color" href="~/Home/TrangChu">Trang chủ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    }
+</body>
+</html>
